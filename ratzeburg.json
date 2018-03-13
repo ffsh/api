@@ -1,0 +1,80 @@
+{
+  "name": "Freifunk Südholstein",
+  "url": "https://www.freifunk-suedholstein.de",
+  "location": {
+    "city": "Ratzeburg",
+    "country": "DE",
+    "lat": 53.69,
+    "lon": 10.77
+  },
+  "contact": {
+    "email": "info@freifunk-suedholstein.de",
+    "phone": "+49 4539 2180785",
+    "facebook": "https://www.facebook.com/ff_suedholstein",
+    "twitter": "@ff_suedholstein"
+  },
+  "metacommunity": "Freifunk Südholstein",
+  "state": {
+    "nodes": 250,
+    "description": "Ein Netz für alle. Um Ressourcen sinnvoll zu nutzen, haben sich Freifunk Stormarn (inkl Bad Oldesloe) mit Freifunk Lauenburg zu einem Netz zusammengeschlossen.",
+    "focus": [
+      "infrastructure/backbone",
+      "Public Free Wifi",
+      "Social Community Building",
+      "Local services and content",
+      "Free internet access"
+    ],
+    "lastchange": "2018-03-13T12:55:59.374Z"
+  },
+  "nodeMaps": [
+    {
+      "url": "http://map.freifunk-suedholstein.de/nodes.json",
+      "interval": "1min",
+      "technicalType": "meshviewer",
+      "mapType": "list/status"
+    }
+  ],
+  "support": {
+    "club": {
+      "name": "Freifunk Südholstein n.e.V",
+      "url": "https://www.ffshev.de"
+    }
+  },
+  "techDetails": {
+    "firmware": {
+      "name": "gluon",
+      "url": "http://www.freifunk-suedholstein.de/firmware",
+      "vpnaccess": "fwimage"
+    },
+    "dns": [
+      {
+        "domainname": "freifunk-suedholstein"
+      }
+    ],
+    "networks": {
+      "ipv6": [
+        {
+          "network": "fddf:bf7:80::/64"
+        }
+      ],
+      "ipv4": [
+        {
+          "network": "10.144.0.0/16"
+        }
+      ]
+    },
+    "routing": [
+      "802.11s",
+      "batman-adv"
+    ],
+    "updatemode": [
+      "manual",
+      "autoupdate"
+    ],
+    "legals": [
+      "vpnnational",
+      "vpninternational"
+    ]
+  },
+  "api": "0.4.14"
+}
