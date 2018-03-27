@@ -24,13 +24,13 @@
       "Local services and content",
       "Free internet access"
     ],
-    "lastchange": "2018-03-13T12:55:59.374Z"
+    "lastchange": "2018-03-27T08:08:27.087Z"
   },
   "nodeMaps": [
     {
-      "url": "https://map.freifunk-suedholstein.de/data/nodes.json",
+      "url": "https://map.freifunk-suedholstein.de/data/nodelist.json",
       "interval": "1min",
-      "technicalType": "meshviewer",
+      "technicalType": "nodelist",
       "mapType": "list/status"
     }
   ],
