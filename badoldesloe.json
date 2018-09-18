@@ -1,5 +1,5 @@
 {
-  "name": "Freifunk Südholstein",
+  "name": "Freifunk S\u00fcdholstein",
   "url": "https://www.freifunk-suedholstein.de",
   "location": {
     "city": "Bad Oldesloe",
@@ -13,10 +13,10 @@
     "facebook": "https://www.facebook.com/ff_suedholstein",
     "twitter": "@ff_suedholstein"
   },
-  "metacommunity": "Freifunk Südholstein",
+  "metacommunity": "Freifunk S\u00fcdholstein",
   "state": {
-    "nodes": 250,
-    "description": "Ein Netz für alle. Um Ressourcen sinnvoll zu nutzen, haben sich Freifunk Stormarn (inkl Bad Oldesloe) mit Freifunk Lauenburg zu einem Netz zusammengeschlossen.",
+    "nodes": 188,
+    "description": "Ein Netz f\u00fcr alle. Um Ressourcen sinnvoll zu nutzen, haben sich Freifunk Stormarn (inkl Bad Oldesloe) mit Freifunk Lauenburg zu einem Netz zusammengeschlossen.",
     "focus": [
       "infrastructure/backbone",
       "Public Free Wifi",
@@ -24,19 +24,19 @@
       "Local services and content",
       "Free internet access"
     ],
-    "lastchange": "2018-03-27T08:08:27.087Z"
+    "lastchange": "2018-09-18T17:59:27.531953Z"
   },
   "nodeMaps": [
     {
-      "url": "https://map.freifunk-suedholstein.de/data/nodelist.json",
+      "url": "https://map.freifunk-suedholstein.de/nodes.json",
       "interval": "1min",
-      "technicalType": "nodelist",
+      "technicalType": "meshviewer",
       "mapType": "list/status"
     }
   ],
   "support": {
     "club": {
-      "name": "Freifunk Südholstein n.e.V",
+      "name": "Freifunk S\u00fcdholstein n.e.V",
       "url": "https://www.ffshev.de"
     }
   },
