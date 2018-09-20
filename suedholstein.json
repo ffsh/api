@@ -28,9 +28,15 @@
   },
   "nodeMaps": [
     {
-      "url": "http://map.freifunk-suedholstein.de/data/nodes.json",
+      "url": "https://map.freifunk-suedholstein.de",
       "interval": "1min",
       "technicalType": "meshviewer",
+      "mapType": "geographical"
+    },
+    {
+      "url": "https://map.freifunk-suedholstein.de/data/nodelist.json",
+      "interval": "1min",
+      "technicalType": "nodelist",
       "mapType": "list/status"
     }
   ],
