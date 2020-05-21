@@ -32,6 +32,12 @@
       "category": "blog",
       "type": "RSS",
       "url": "https://www.freifunk-suedholstein.de/feed/"
+    },
+    {
+      "category": "ics",
+      "url": "https://freifunk-suedholstein.de/feed/eo-events/",
+      "type": "ics",
+      "name": "Kalender"
     }
   ],
   "nodeMaps": [
