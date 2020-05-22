@@ -29,7 +29,7 @@ jobs:
 
     - name: Update the json files
       run: |
-        for i in *.java; do
+        for i in *.json; do
           [ -f "$i" ] || break
           apiupdater -filename $i -url https://map.freifunk-suedholstein.de/data/meshviewer.json
         done
@@ -43,6 +43,6 @@ jobs:
 
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        
+
         git commit -m "Update node count"
         git push github HEAD:${GITHUB_REF}
