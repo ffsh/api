@@ -25,7 +25,7 @@ jobs:
       run: pip3 install setuptools
 
     - name: Install the updater
-      run: pip3 install ./pyAPIUpdater/
+      run: sudo pip3 install ./pyAPIUpdater/
 
     - name: Update the json files
       run: |
