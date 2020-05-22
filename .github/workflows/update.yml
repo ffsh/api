@@ -41,5 +41,8 @@ jobs:
 
         git add .
 
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
         git commit -m "Update node count"
         git push github HEAD:${GITHUB_REF}
