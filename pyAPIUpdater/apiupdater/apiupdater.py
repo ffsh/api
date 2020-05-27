@@ -5,6 +5,9 @@ import json
 import datetime
 import argparse
 import requests
+import sys
+from requests.adapters import HTTPAdapter
+from urllib3.exceptions import MaxRetryError
 
 PARSER = argparse.ArgumentParser()
 PARSER.add_argument("-filename", help="filename", required=True)
@@ -26,7 +29,7 @@ class API():
 
     def update_nodes(self):
         # Get the current json file
-        response = requests.get(self.meshviewer_url)
+        response = requests.get(self.meshviewer_url, HTTPAdapter(max_retries=10))
         data = response.json()
         node_counter = 0
         for node in data["nodes"]:
@@ -49,8 +52,16 @@ class API():
 
 def main():
     api = API(ARGS.filename, ARGS.url)
-    api.validate()
-    api.update_nodes()
+    try:
+        api.validate()
+    except Exception as e:
+        print("Exception opening the file: {}".format(e))
+        sys.exit(1)
+    try:
+        api.update_nodes()
+    except MaxRetryError:
+        print("Network unreachable")
+    
 
 if __name__ == '__main__':
     main()
