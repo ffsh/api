@@ -7,6 +7,7 @@ import argparse
 import requests
 import sys
 from requests.adapters import HTTPAdapter
+from requests.packages.urllib3.util.retry import Retry
 from urllib3.exceptions import MaxRetryError
 
 PARSER = argparse.ArgumentParser()
@@ -22,6 +23,14 @@ class API():
         super().__init__()
         self.filename = filename
         self.meshviewer_url = meshviewer_url
+        retry_strategy = Retry(
+            total=10,
+            backoff_factor=2
+        )
+        adapter = HTTPAdapter(max_retries=retry_strategy)
+        self.http = requests.Session()
+        self.http.mount("https://", adapter)
+        self.http.mount("http://", adapter)
 
     def validate(self):
         with open(self.filename) as api_file:
@@ -29,7 +38,8 @@ class API():
 
     def update_nodes(self):
         # Get the current json file
-        response = requests.get(self.meshviewer_url, HTTPAdapter(max_retries=10))
+
+        response = self.http.get(self.meshviewer_url)
         data = response.json()
         node_counter = 0
         for node in data["nodes"]:
