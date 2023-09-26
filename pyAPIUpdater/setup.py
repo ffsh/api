@@ -10,12 +10,12 @@ with open('LICENSE') as f:
 
 setup(
     name='apiupdater',
-    version='0.0.1',
+    version='0.0.2',
     description='Updates your Freifunk API File',
     long_description=README,
     author='Benjamin Brahmer',
     author_email='info@b-brahmer.de',
-    url='https://git.b-brahmer.de/Grotax/pyAPIUpdater',
+    url='https://github.com/ffsh/api/tree/main',
     license=LICENSE,
     packages=find_packages(exclude=('tests', 'docs')),
     install_requires=[
