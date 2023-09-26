@@ -10,8 +10,7 @@
   "contact": {
     "email": "kontakt@freifunk-suedholstein.de",
     "phone": "+49 4539 2180785",
-    "facebook": "https://www.facebook.com/ff_suedholstein",
-    "twitter": "@ff_suedholstein"
+    "mastodon": "https://norden.social/@ffsh" 
   },
   "metacommunity": "Freifunk S\u00fcdholstein",
   "state": {
@@ -96,5 +95,5 @@
       "vpninternational"
     ]
   },
-  "api": "0.4.14"
+  "api": "0.5.2"
 }
