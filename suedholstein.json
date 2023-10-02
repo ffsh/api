@@ -4,8 +4,10 @@
   "location": {
     "city": "Bad Oldesloe",
     "country": "DE",
-    "lat": 53.81,
-    "lon": 10.37
+    "geoCode": {
+      "lat": 53.81,
+      "lon": 10.37
+    }
   },
   "contact": {
     "email": "kontakt@freifunk-suedholstein.de",

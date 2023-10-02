@@ -4,8 +4,10 @@
   "location": {
     "city": "Lauenburg",
     "country": "DE",
-    "lat": 53.37,
-    "lon": 10.54
+    "geoCode": {
+      "lat": 53.37,
+      "lon": 10.54
+    }
   },
   "contact": {
     "email": "kontakt@freifunk-suedholstein.de",

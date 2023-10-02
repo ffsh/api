@@ -4,8 +4,10 @@
   "location": {
     "city": "Reinbek",
     "country": "DE",
-    "lat": 53.51,
-    "lon": 10.24
+    "geoCode": {
+      "lat": 53.51,
+      "lon": 10.24
+    }
   },
   "contact": {
     "email": "kontakt@freifunk-suedholstein.de",

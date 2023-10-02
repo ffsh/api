@@ -4,8 +4,10 @@
   "location": {
     "city": "Ratzeburg",
     "country": "DE",
-    "lat": 53.69,
-    "lon": 10.77
+    "geoCode": {
+      "lat": 53.69,
+      "lon": 10.77
+    }
   },
   "contact": {
     "email": "kontakt@freifunk-suedholstein.de",
