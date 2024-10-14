@@ -22,7 +22,7 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Install dependencies
-      run: pip3 install setuptools
+      run: sudo apt-get install python3-setuptools -y
 
     - name: Install the updater
       run: sudo pip3 install ./pyAPIUpdater/
