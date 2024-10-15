@@ -7,6 +7,9 @@ name: Update API files
 on:
   schedule:
     - cron: '0 0 * * *'
+  push:
+    branches:
+      - main
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -22,10 +25,10 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Install dependencies
-      run: sudo apt-get install python3-setuptools -y
+      run: sudo apt-get install python3-setuptools pipx -y
 
     - name: Install the updater
-      run: sudo pip3 install ./pyAPIUpdater/
+      run: pipx install ./pyAPIUpdater/
 
     - name: Update the json files
       run: |
