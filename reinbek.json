@@ -16,7 +16,7 @@
   },
   "metacommunity": "Freifunk S\u00fcdholstein",
   "state": {
-    "nodes": 121,
+    "nodes": 120,
     "description": "Ein Netz f\u00fcr alle. Um Ressourcen sinnvoll zu nutzen, haben sich Freifunk Stormarn (inkl Bad Oldesloe) mit Freifunk Lauenburg zu einem Netz zusammengeschlossen.",
     "focus": [
       "infrastructure/backbone",
@@ -25,7 +25,7 @@
       "Local services and content",
       "Free internet access"
     ],
-    "lastchange": "2025-10-18T00:46:22.146621Z"
+    "lastchange": "2025-10-19T00:57:09.607723Z"
   },
   "feeds": [
     {
