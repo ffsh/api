@@ -25,7 +25,9 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Install dependencies
-      run: sudo apt-get install python3-setuptools pipx -y
+      run: |
+        sudo apt-get update
+        sudo apt-get install python3-setuptools pipx -y
 
     - name: Install the updater
       run: pipx install ./pyAPIUpdater/
