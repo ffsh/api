@@ -20,6 +20,7 @@ setup(
     packages=find_packages(exclude=('tests', 'docs')),
     install_requires=[
         'requests',
+        'urllib3',
     ],
     entry_points={
         'console_scripts': [

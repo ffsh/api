@@ -1,31 +1,23 @@
 #!/usr/bin/python3
-""" mediamanger """
-import os
+""" API Updater for Freifunk JSON files """
 import json
 import datetime
 import argparse
 import requests
 import sys
 from requests.adapters import HTTPAdapter
-from requests.packages.urllib3.util.retry import Retry
-from urllib3.exceptions import MaxRetryError
-
-PARSER = argparse.ArgumentParser()
-PARSER.add_argument("-filename", help="filename", required=True)
-PARSER.add_argument("-url", help="url", required=True)
-
-
-ARGS = PARSER.parse_args()
+from urllib3.util.retry import Retry
 
 class API():
-    """ thats a MediaManager """
+    """ API Updater class for Freifunk JSON files """
     def __init__(self, filename, meshviewer_url):
         super().__init__()
         self.filename = filename
         self.meshviewer_url = meshviewer_url
         retry_strategy = Retry(
             total=10,
-            backoff_factor=2
+            backoff_factor=2,
+            status_forcelist=(429, 500, 502, 503, 504),
         )
         adapter = HTTPAdapter(max_retries=retry_strategy)
         self.http = requests.Session()
@@ -39,7 +31,8 @@ class API():
     def update_nodes(self):
         # Get the current json file
 
-        response = self.http.get(self.meshviewer_url)
+        response = self.http.get(self.meshviewer_url, timeout=30)
+        response.raise_for_status()
         data = response.json()
         node_counter = 0
         for node in data["nodes"]:
@@ -54,24 +47,33 @@ class API():
         print("File loaded")
 
         api_data["state"]["nodes"] = node_counter
-        api_data["state"]["lastchange"] = datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S.%fZ")
+        api_data["state"]["lastchange"] = datetime.datetime.now(
+            datetime.timezone.utc
+        ).strftime("%Y-%m-%dT%H:%M:%S.%fZ")
 
         with open(self.filename, "w") as api_file:
             json.dump(api_data, api_file, indent=2)
         print("updated your file")
 
 def main():
-    api = API(ARGS.filename, ARGS.url)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-filename", help="filename", required=True)
+    parser.add_argument("-url", help="url", required=True)
+    args = parser.parse_args()
+
+    api = API(args.filename, args.url)
     try:
         api.validate()
-    except Exception as e:
-        print("Exception opening the file: {}".format(e))
-        sys.exit(1)
+    except (OSError, json.JSONDecodeError) as error:
+        print("Could not read JSON file: {}".format(error))
+        return 1
     try:
         api.update_nodes()
-    except MaxRetryError:
-        print("Network unreachable")
+    except requests.exceptions.RequestException as error:
+        print("Network request failed: {}".format(error))
+        return 1
+    return 0
     
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main())
