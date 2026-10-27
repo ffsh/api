@@ -49,12 +49,6 @@
       "mapType": "list/status"
     }
   ],
-  "support": {
-    "club": {
-      "name": "Freifunk S\u00fcdholstein n.e.V",
-      "url": "https://www.ffshev.de"
-    }
-  },
   "techDetails": {
     "firmware": {
       "name": "gluon",
